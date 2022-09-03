@@ -1,5 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import styled from 'styled-components'
+import { darken, transparentize } from 'polished';
 
 export const Overlay = styled(Dialog.Overlay)`
   position: fixed;
@@ -74,11 +75,18 @@ export const TransactionType = styled.div`
 `
 
 interface TransactionTypeButtonProps {
-  variant: 'income' | 'outcome'
+  isActive: Boolean;
+  activeColor: 'green' | 'red',
 }
-
+const colors ={
+  green:'#00875F',
+  red:'#F75A68'
+}
 export const TransactionTypeButton = styled.div<TransactionTypeButtonProps>`
-  background: var(--grey-light);
+
+  background: ${({ isActive, activeColor }) => isActive
+  ? transparentize(0.2, colors[activeColor])
+  : 'var(--grey-light)'};
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -86,11 +94,10 @@ export const TransactionTypeButton = styled.div<TransactionTypeButtonProps>`
   gap: 0.5rem;
   border-radius: 6px;
   cursor: pointer;
-  border: 0;
+  border:none;
   color: var(--text-title);
-  transition: filter 0.2;
         &:hover{
-        filter: brightness(0.9)
+          border-color: ${darken(0.1, '#d7d7d7')};
         }
   svg {
   }
