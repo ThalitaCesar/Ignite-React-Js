@@ -1,9 +1,28 @@
 
-### Rodar o projeto: yarn dev
+# Github Explorer
 
-## Sobre:
-Nesse repositorio foi realizado a configuração do ambiente, explicado sobre babel, webpack, realizado a configuração do webpack, explicação sobre a configuração para desenvolvimento e produção, estilização com sass e explicação do uso de typescript em projetos react. 
+## Sobre
 
+Nesse repositório foi realizado a configuração do ambiente react com babel, webpack, typescript. 
+* Estilização com sass.
+
+
+## Instalação e uso
+
+```bash
+# Abra um terminal e copie este repositório com o comando
+git clone https://github.com/ThalitaCesar/Ignite-React-Js/tree/main/github-explorer
+
+# Entre na pasta web com 
+cd github-explorer
+
+
+# Instale as dependências
+yarn install
+
+# Rode a aplicação
+yarn start
+```
 
 
 
